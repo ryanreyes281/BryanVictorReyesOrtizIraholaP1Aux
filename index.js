@@ -98,14 +98,13 @@ function cinco(){
 //6.- 
 function seis(){
     let string = prompt("Introduce un Texto que contenga paréntesis:");
-    //Longitud de la cadena
     var tamaño = string.length;
     var caracter;
     var salida = "";
     var cp = false;
         
 	for (let i = 0; i < tamaño; i++) {
-		caracter = string.charAt(i);    //recupera el caracter i del string.
+		caracter = string.charAt(i);    
 		if (caracter == ")") {
             cp = false;
         }
@@ -272,12 +271,13 @@ function trece(){
 //14.-
 function catorce(){
     let palabra = prompt ("introduzca el texto");
-    const contar=palabra => {
-        const vocales = "aeiou";
-        let cantidadvocales =0;
-        let cantidadconsonantes=0;
-
-        }
+    function count(palabra){
+        const count=palabra.match(/[aeiou]/gi).length;
+        const count2=palabra.match(/[bcdfghjklmnpqrstvwxyz]/gi).length;
+        document.write("vocales"+count+"<br>");
+        document.write("consonantes"+count2);
+    }
+    count(palabra)
         
 }
 //15.-
@@ -295,7 +295,40 @@ function isVallidName(nombre) {
     isVallidName(nombre);
 }
 //16.-
+function dieciseis(){
+    let arreglo = ['5', '25', '10', 's', '5', 'a', 'a'];
+    function ad(arreglo){
+    let result = arreglo.filter((item,index)=>{
+      return arreglo.indexOf(item) === index;
+    })
+    document.write(result);
+    }
+    ad(arreglo);
+}
+//17.-
+function diecisiete(){
+    
+}
+//18.-
+function dieciocho(){
+    const carta='bici coche balón _playstation bici coche peluche';
+    function listGifts(carta) {
+        const arrayGifts = carta.split(' ')
+        const count = {}
+        
+        const filterUndesired = arrayGifts
+          .filter(gift => /^(?!_)/.test(gift))
+          .filter(gift => gift)
+        
+        for (const num of filterUndesired) {
+          count[num] = count[num] ? count[num] + 1 : 1
+        }
+        
+        return count
+      }
+     let r=listGifts(carta);
+     console.log(r);
 
-
+}
 
 
